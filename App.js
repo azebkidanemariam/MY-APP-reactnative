@@ -5,45 +5,16 @@ import MyComponent from "./components/MyComponent";
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import MainStack from "./navigators/stack";
-import { MyContextProvider } from "./store/MyContext";
+import { ThemeContext,ThemeContextProvider } from "./store/MyContext";
 
-// export default function App() {
-//   return (
-//     <NavigationContainer>
-//       <MainStack />
-//     </NavigationContainer>
-//   );
-// }
 const App = () => {
   return (
-    <MyContextProvider>
+    <ThemeContext.Provider>
       <NavigationContainer>
         <MainStack />
-        {/* <View style={styles.container}>
-          <MyComponent color="yellow" />
-          <MyComponent color="peachpuff" />
-          <StatusBar style="auto" />
-        </View> */}
       </NavigationContainer>
-    </MyContextProvider>
+    </ThemeContext.Provider>
   );
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#8B008B",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 export default App;
-// export default function App() {
-//   return (
-//     <View style={styles.container}>
-//       <MyComponent color="yellow" />
-//       <MyComponent color="peachpuff" />
-//       <StatusBar style="auto" />
-//     </View>
-//   );
-// }
